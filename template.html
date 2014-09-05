@@ -1,0 +1,26 @@
+
+<html>
+<head>
+    <script src="js/brython/brython.js"></script>
+</head>
+<body onload="brython({static_stdlib_import: true})">
+    <script type="text/python">
+        try:
+            from browser import doc
+            def pr(arg):
+                if arg == '':
+                    doc['ttt'].innerHTML += arg + '\n'
+                else:
+                    doc['ttt'].innerHTML += str(arg) + ' '
+        except:
+            # print('not in brython')
+            def pr(arg):
+                print(arg),
+    </script>
+
+    <pre><code><div id="ttt"></div></code></pre>
+    <script type="text/python">
+#code#
+    </script>
+</body>
+</html>
